@@ -1,11 +1,11 @@
-function getComputerPlay(){
+function computerPlay(){
     let computerSelection = Math.floor(Math.random()*3);
     if(computerSelection === 0) return `rock`;
     if(computerSelection === 1) return `paper`;
     return `scissors`;
 }
 
-function getPlayerPlay(){
+function playerPlay(){
     let playerSelection
     let keepGoing = true;
     while(keepGoing){
@@ -68,8 +68,8 @@ function game(){
     let playerScore = 0;
     let computerScore = 0;
     for(let i = 0; i < 5; i++){
-        const computerSelection = getComputerPlay();
-        const playerSelection = getPlayerPlay();
+        const computerSelection = computerPlay();
+        const playerSelection = playerPlay();
         const roundWinner = playRound(computerSelection, playerSelection);
         console.log(`Round ${i+1}: ${roundWinner}`);
         if(roundWinner.substring(4,7) === `Win`) playerScore += 1;

@@ -1,16 +1,19 @@
-function computerPlay(){
+function getComputerPlay(){
     let computerSelection = Math.floor(Math.random()*3);
     if(computerSelection === 0) return `rock`;
     if(computerSelection === 1) return `paper`;
     return `scissors`;
 }
 
-function playerPlay(){
+function getPlayerPlay(){
     let playerSelection
     let keepGoing = true;
     while(keepGoing){
         playerSelection = prompt(`Select "Rock", "Paper", or "Scissors": `).toLowerCase();
-        if((playerSelection.charAt(0) === `r` || playerSelection.charAt(0) === `p` || playerSelection.charAt(0) === `s`) && playerSelection != undefined){
+        if((playerSelection.charAt(0) === `r` || 
+                playerSelection.charAt(0) === `p` || 
+                playerSelection.charAt(0) === `s`) && 
+                playerSelection != undefined){
             keepGoing = false;
         }        
     }
@@ -47,15 +50,17 @@ function playRound(computerSelection, playerSelection){
     }
 }
 
-function gameWinner(computerScore, playerScore){
+function getGameWinner(computerScore, playerScore){
     if(playerScore > computerScore){
-        console.log(`Game Over - You Win! You - ${playerScore}, Computer - ${computerScore}`);
+        console.log(`Game Over - You Win! You - ${playerScore}, ` +
+                `Computer - ${computerScore}`);
     }else{
-        console.log(`Game Over - You Lose. You - ${playerScore}, Computer - ${computerScore}`);
+        console.log(`Game Over - You Lose. You - ${playerScore}, ` +
+                `Computer - ${computerScore}`);
     }
 }
 
-function playAgain(){
+function askPlayAgain(){
     return prompt(`Play again? [Y]/[N]: `).toLowerCase();
 }
 
@@ -63,17 +68,18 @@ function game(){
     let playerScore = 0;
     let computerScore = 0;
     for(let i = 0; i < 5; i++){
-        const computerSelection = computerPlay();
-        const playerSelection = playerPlay();
+        const computerSelection = getComputerPlay();
+        const playerSelection = getPlayerPlay();
         const roundWinner = playRound(computerSelection, playerSelection);
         console.log(`Round ${i+1}: ${roundWinner}`);
-        if(roundWinner.charAt(4) === `W`) playerScore += 1;
-        if(roundWinner.charAt(4) === `L`) computerScore += 1;
-        if(roundWinner.charAt(0) === `T`) i -= 1;
-        if(roundWinner.charAt(0) !== `T`) console.log(`The current score is: You - ${playerScore}, Computer - ${computerScore}`);
+        if(roundWinner.substring(4,7) === `Win`) playerScore += 1;
+        if(roundWinner.substring(4,8) === `Lose`) computerScore += 1;
+        if(roundWinner.substring(0,3) === `Tie`) i -= 1;
+        if(roundWinner.substring(0,3) !== `Tie`) console.log(`The current ` +
+                `score is: You - ${playerScore}, Computer - ${computerScore}`);
     }
-    gameWinner(computerScore, playerScore);
-    if(playAgain() === `y`) game();
+    getGameWinner(computerScore, playerScore);
+    if(askPlayAgain().charAt(0) === `y`) game();
 }
 
 game();

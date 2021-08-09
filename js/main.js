@@ -22,7 +22,7 @@ function playerPlay(){
 function playRound(computerSelection, playerSelection){
     if(computerSelection === `rock`){
         if(playerSelection === `rock`){
-            return `Tie! You both played Rock`;
+            return `Tie! You both played Rock. Go again`;
         }else if(playerSelection === `paper`){
             return `You Win! Paper beats Rock`;
         }else{
@@ -32,7 +32,7 @@ function playRound(computerSelection, playerSelection){
         if(playerSelection === `rock`){
             return `You Lose! Paper beats Rock`;
         }else if(playerSelection === `paper`){
-            return `Tie! You both played Paper`;
+            return `Tie! You both played Paper. Go again`;
         }else{
             return `You Win! Scissors beats Paper`;
         }
@@ -42,7 +42,7 @@ function playRound(computerSelection, playerSelection){
         }else if(playerSelection === `paper`){
             return `You Lose! Scissors beats Paper`;
         }else{
-            return `Tie! You both played Scissors`;
+            return `Tie! You both played Scissors.  Go again`;
         }
     }
 }
@@ -69,7 +69,8 @@ function game(){
         console.log(`Round ${i+1}: ${roundWinner}`);
         if(roundWinner.charAt(4) === `W`) playerScore += 1;
         if(roundWinner.charAt(4) === `L`) computerScore += 1;
-        console.log(`The current score is: You - ${playerScore}, Computer - ${computerScore}`);
+        if(roundWinner.charAt(0) === `T`) i -= 1;
+        if(roundWinner.charAt(0) !== `T`) console.log(`The current score is: You - ${playerScore}, Computer - ${computerScore}`);
     }
     gameWinner(computerScore, playerScore);
     if(playAgain() === `y`) game();

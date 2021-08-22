@@ -17,22 +17,29 @@
     <div id="gameTitle" class="game-title">
       <h1>Rock Paper Scissors</h1>
     </div>
-    <div id="winLoseDecleration" class="win-lose-declaration"></div>
+    <div class="round-win-lose-container"><p id="roundWinLoseText"></p></div>
     <div id="scoreBoard" class="score-board">
-      <div id="playerScore" class="player-score">
-        <p>You: </p>
-        <div id="playerSelectionIcon" class="player-selection-icon"></div>
+      <div class="player-score">
+        <p>You: <span id="playerScore">0</span></p>
+        <div class="player-selection-icon"><img id="playerSelectionIcon"></div>
       </div>
-      <div id="computerScore" class="computer-score">
-        <p>Computer: </p>
-        <div id="computerSelectionIcon" class="computer-selection-icon"></div>
+      <div class="computer-score">
+        <p>Computer: <span id="computerScore">0</span></p>
+        <div class="computer-selection-icon"><img id="computerSelectionIcon"></div>
       </div>
     </div>
     <div id="gameButtonContainer" class="game-button-container">
-      <button id="rockButton" class="rock-button game-button"><img src="icon/rock.png"></button>
-      <button id="paperButton" class="paper-button game-button"><img src="icon/paper.png"></button>
-      <button id="scissorsButton" class="scissors-button game-button"><img src="icon/scissors.png"></button>
+      <button id="rockButton" class="game-button"><img src="icon/rock.png" alt="rock icon"></button>
+      <button id="paperButton" class="game-button"><img src="icon/paper.png" alt="paper icon"></button>
+      <button id="scissorsButton" class="game-button"><img src="icon/scissors.png" alt="scissors icon"></button>
     </div>
+  </div>
+
+  <div id="screenOverlay" class="screen-overlay"></div>
+  <div id="endGameContainer" class="end-game-container">
+    <p id="gameWinLoseText" class="game-win-lose-text"></p>
+    <p id="gameFinalScore" class="game-final-score"></p>
+    <button id="restartButton" class="restart-button">Restart</button>
   </div>
 
 </body>

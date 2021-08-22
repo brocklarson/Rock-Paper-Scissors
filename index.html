@@ -13,6 +13,27 @@
   <script src="js/main.js" defer></script>
 </head>
 <body>
+  <div id=gameContainer class="game-container">
+    <div id="gameTitle" class="game-title">
+      <h1>Rock Paper Scissors</h1>
+    </div>
+    <div id="winLoseDecleration" class="win-lose-declaration"></div>
+    <div id="scoreBoard" class="score-board">
+      <div id="playerScore" class="player-score">
+        <p>You: </p>
+        <div id="playerSelectionIcon" class="player-selection-icon"></div>
+      </div>
+      <div id="computerScore" class="computer-score">
+        <p>Computer: </p>
+        <div id="computerSelectionIcon" class="computer-selection-icon"></div>
+      </div>
+    </div>
+    <div id="gameButtonContainer" class="game-button-container">
+      <button id="rockButton" class="rock-button game-button"><img src="icon/rock.png"></button>
+      <button id="paperButton" class="paper-button game-button"><img src="icon/paper.png"></button>
+      <button id="scissorsButton" class="scissors-button game-button"><img src="icon/scissors.png"></button>
+    </div>
+  </div>
 
 </body>
 </html>

@@ -1,46 +1,58 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Rock, Paper, Scissors</title>
-  <meta name="description" content="Rock, Paper, and Scissors for The Odin Project">
-  <meta name="author" content="Brock Larson">
+    <title>Rock, Paper, Scissors</title>
+    <meta name="description" content="Rock, Paper, and Scissors for The Odin Project">
+    <meta name="author" content="Brock Larson">
 
-  <link rel="icon" href="icon/icon.png">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/main.js" defer></script>
+    <link rel="icon" href="icon/icon.png">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://kit.fontawesome.com/4c536a6bd5.js" crossorigin="anonymous"></script>
+    <script src="js/main.js" defer></script>
 </head>
+
 <body>
-  <div id=gameContainer class="game-container">
-    <div id="gameTitle" class="game-title">
-      <h1>Rock Paper Scissors</h1>
+    <div id=gameContainer class="game-container">
+        <div id="gameTitle" class="game-title">
+            <h1>Rock Paper Scissors</h1>
+        </div>
+        <div class="round-win-lose-container">
+            <p id="roundWinLoseText"></p>
+        </div>
+        <div id="scoreBoard" class="score-board">
+            <div class="player-score">
+                <p>You: <span id="playerScore">0</span></p>
+                <div class="player-selection-icon"><img id="playerSelectionIcon"></div>
+            </div>
+            <div class="computer-score">
+                <p>Computer: <span id="computerScore">0</span></p>
+                <div class="computer-selection-icon"><img id="computerSelectionIcon"></div>
+            </div>
+        </div>
+        <div id="gameButtonContainer" class="game-button-container">
+            <button id="rockButton" class="game-button"><img src="icon/rock.png" alt="rock icon"></button>
+            <button id="paperButton" class="game-button"><img src="icon/paper.png" alt="paper icon"></button>
+            <button id="scissorsButton" class="game-button"><img src="icon/scissors.png" alt="scissors icon"></button>
+        </div>
     </div>
-    <div class="round-win-lose-container"><p id="roundWinLoseText"></p></div>
-    <div id="scoreBoard" class="score-board">
-      <div class="player-score">
-        <p>You: <span id="playerScore">0</span></p>
-        <div class="player-selection-icon"><img id="playerSelectionIcon"></div>
-      </div>
-      <div class="computer-score">
-        <p>Computer: <span id="computerScore">0</span></p>
-        <div class="computer-selection-icon"><img id="computerSelectionIcon"></div>
-      </div>
-    </div>
-    <div id="gameButtonContainer" class="game-button-container">
-      <button id="rockButton" class="game-button"><img src="icon/rock.png" alt="rock icon"></button>
-      <button id="paperButton" class="game-button"><img src="icon/paper.png" alt="paper icon"></button>
-      <button id="scissorsButton" class="game-button"><img src="icon/scissors.png" alt="scissors icon"></button>
-    </div>
-  </div>
 
-  <div id="screenOverlay" class="screen-overlay"></div>
-  <div id="endGameContainer" class="end-game-container">
-    <p id="gameWinLoseText" class="game-win-lose-text"></p>
-    <p id="gameFinalScore" class="game-final-score"></p>
-    <button id="restartButton" class="restart-button">Restart</button>
-  </div>
+    <div id="screenOverlay" class="screen-overlay"></div>
+    <div id="endGameContainer" class="end-game-container">
+        <p id="gameWinLoseText" class="game-win-lose-text"></p>
+        <p id="gameFinalScore" class="game-final-score"></p>
+        <button id="restartButton" class="restart-button">Restart</button>
+    </div>
 
+    <footer>
+        <p>Brock Larson &copy; 2021 </p>
+        <a href="https://github.com/brocklarson" target="_blank">
+            <i class="fab fa-github"></i></a>
+    </footer>
 </body>
+
 </html>

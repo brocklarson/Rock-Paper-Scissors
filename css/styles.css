@@ -197,6 +197,15 @@ footer {
 
 @media only screen and (max-width: 800px){
     h1{
-        font-size: 7vw;
+        font-size: 36px;
+        line-height: 7vh;
+        margin-top: 24px;
+        padding: 0;
+    }
+    .score-board p {
+        font-size: 24px;
+    }
+    .round-win-lose-container p {
+        font-size: 30px;
     }
 }
